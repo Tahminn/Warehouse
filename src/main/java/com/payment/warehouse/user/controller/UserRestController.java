@@ -1,0 +1,21 @@
+package com.payment.warehouse.user.controller;
+
+
+import com.payment.warehouse.user.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class UserRestController {
+	private final UserService service;
+
+	public UserRestController(UserService service) {
+		this.service = service;
+	}
+
+	@PostMapping("/users/check_email")
+	public String checkDuplicateEmail(Integer id, String email) {
+		return service.isEmailUnique(id, email) ? "OK" : "Duplicated";
+	}
+}

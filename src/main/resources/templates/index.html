@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en" data-bs-theme="light">
+
+<head th:replace="fragments/header_fragment :: page_head('Warehouse', 'none')">
+    <title>Warehouse</title>
+</head>
+
+<body id="kt_body" class="header-fixed header-tablet-and-mobile-fixed toolbar-enabled"
+      data-kt-app-page-loading-enabled="true" data-kt-app-page-loading="on">
+<div class="d-flex flex-column flex-root">
+    <div class="page d-flex flex-row flex-column-fluid">
+        <div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
+            <div th:replace="fragments/navigation_fragment :: menu"></div>
+            <div id="kt_content_container">
+                <div class="flex-row-fluid container-fluid py-3" id="kt_content">
+                    <!--start main-->
+                    <!--end main-->
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div th:replace="fragments/footer_fragment :: footer"></div>
+</body>
+
+</html>

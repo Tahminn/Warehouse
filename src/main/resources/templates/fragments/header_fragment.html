@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head th:fragment="page_head(remove)" th:remove="${remove}">
+    <title>[[${pageTitle}]]</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0">
+    <meta property="og:locale" content="en_US"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:site_name" content="Front"/>
+
+    <link rel="stylesheet" type="text/css" th:href="@{/fontawesome/all.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/style.css}" />
+    <link rel="shortcut icon" th:href="@{/favicon.ico}"/>
+    <link rel="stylesheet" th:href="@{/fonts/fonts-inter.css}"/>
+    <link th:href="@{/lib/datatables/dataTables.bundle.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/css/pagedlist.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/lib/jqueryui/jquery-ui.min.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/css/style/plugins.bundle.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/css/style/style.bundle.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/css/site.css}" rel="stylesheet" type="text/css"/>
+
+    <script type="text/javascript" th:src="@{/js/common.js}"></script>
+    <script src="http://localhost:35729/livereload.js"></script>
+</head>
+
+<body>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" lang="en">
+
+<head th:replace="fragments/header_fragment :: page_head('none')"></head>
+
+<body id="kt_body" class="header-fixed header-tablet-and-mobile-fixed toolbar-enabled"
+      data-kt-app-page-loading-enabled="true" data-kt-app-page-loading="on">
+<header th:replace="fragments/navigation_fragment :: menu"></header>
+<main class="d-flex flex-column flex-root">
+    <div class="page d-flex flex-row flex-column-fluid">
+        <div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
+            <div id="kt_content_container">
+                <div class="flex-row-fluid container-fluid py-3" id="kt_content" layout:fragment="content">
+                    <p>Main Content</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<footer th:replace="fragments/footer_fragment :: footer"></footer>
+<script th:src="@{/js/common_list.js}"></script>
+</body>
+
+</html>

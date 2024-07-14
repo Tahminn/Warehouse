@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<body>
+
+<div th:fragment="footer" class="text-center m-3">
+    <div id="kt_scrolltop" class="scrolltop" data-kt-scrolltop="true">
+        <i class="ki-duotone ki-arrow-up">
+            <span class="path1"></span>
+            <span class="path2"></span>
+        </i>
+    </div>
+
+    <div class="page-loader flex-column bg-dark bg-opacity-25">
+        <span class="spinner-border text-primary" role="status"></span>
+        <span class="text-gray-800 fs-6 fw-semibold mt-5">Loading...</span>
+    </div>
+
+    <script th:src="@{/js/plugins.bundle.js}"></script>
+    <script th:src="@{/js/scripts.bundle.js}"></script>
+    <script th:src="@{/lib/inputmask/inputmask/jquery.inputmask.min.js}"></script>
+    <script th:src="@{/lib/datatables/datatables.bundle.js}"></script>
+    <script th:src="@{/js/widgets.bundle.js}"></script>
+    <script th:src="@{/js/custom/widgets.js}"></script>
+    <script th:src="@{/js/custom/apps/chat/chat.js}"></script>
+    <script th:src="@{/js/custom/utilities/modals/users-search.js}"></script>
+    <script th:src="@{/js/site.js}"></script>
+</div>
+
+</body>
+
+</html>
