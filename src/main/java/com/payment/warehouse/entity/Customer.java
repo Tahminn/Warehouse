@@ -1,50 +1,55 @@
 package com.payment.warehouse.entity;
 
-
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import org.apache.tomcat.websocket.AuthenticationType;
 
-import java.util.Date;
+import java.math.BigDecimal;
 
-@Setter
-@Getter
 @Entity
-@Table(name = "customers")
-//public class Customer extends AbstractAddressWithCountry {
-public class Customer extends IdBasedEntity {
+@Table(name = "customers", indexes = {
+    @Index(name = "idx_customers_code", columnList = "code", unique = true),
+    @Index(name = "idx_customers_name", columnList = "name"),
+    @Index(name = "idx_customers_is_active", columnList = "is_active")
+})
+@Getter @Setter
+public class Customer extends BaseEntity {
+    @Column(nullable = false, length = 50)
+    private String code;
 
-    @Column(nullable = false, unique = true, length = 45)
+    @Column(nullable = false, length = 200)
+    private String name;
+
+    @Column(name = "contact_person", length = 200)
+    private String contactPerson;
+
+    @Column(length = 200)
     private String email;
 
-    @Column(nullable = false, length = 64)
-    private String password;
+    @Column(length = 50)
+    private String phone;
 
-    @Column(name = "verification_code", length = 64)
-    private String verificationCode;
+    @Column(length = 50)
+    private String mobile;
 
-    private boolean enabled;
+    @Column(columnDefinition = "TEXT")
+    private String address;
 
-    @Column(name = "created_time")
-    private Date createdTime;
+    @Column(length = 100)
+    private String city;
 
-    @Enumerated(EnumType.STRING)
-    @Column(name = "authentication_type", length = 10)
-    private AuthenticationType authenticationType;
+    @Column(length = 100)
+    private String country;
 
-    @Column(name = "reset_password_token", length = 30)
-    private String resetPasswordToken;
+    @Column(name = "tax_number", length = 50)
+    private String taxNumber;
 
-    public Customer() {
-    }
+    @Column(name = "credit_limit", precision = 18, scale = 2)
+    private BigDecimal creditLimit;
 
-    public Customer(Integer id) {
-        this.id = id;
-    }
+    @Column(name = "payment_terms", length = 200)
+    private String paymentTerms;
 
-//    public String getFullName() {
-//        return firstName + " " + lastName;
-//    }
-
+    @Column(columnDefinition = "TEXT")
+    private String notes;
 }

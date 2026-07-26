@@ -10,16 +10,15 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.util.Assert;
 
+import java.time.LocalDateTime;
 import java.util.*;
 import java.util.function.Function;
-
-import static org.apache.logging.log4j.util.Strings.EMPTY;
 
 @Setter
 @Getter
 @Entity
 @Table(name = "users")
-public class AppUser extends IdBasedEntity implements UserDetails {
+public class AppUser extends BaseEntity implements UserDetails {
 
     @Column(length = 128, nullable = false, unique = true)
     private String username;
@@ -38,6 +37,12 @@ public class AppUser extends IdBasedEntity implements UserDetails {
 
     @Column(length = 64)
     private String photos;
+
+    @Column(name = "address", length = 500)
+    private String address;
+
+    @Column(name = "password_expiration_date")
+    private java.time.LocalDateTime passwordExpirationDate;
 
     private boolean accountNonExpired;
 
@@ -78,7 +83,7 @@ public class AppUser extends IdBasedEntity implements UserDetails {
     }
 
     public AppUser(String username, String email, String password) {
-        this(username, email, password, EMPTY, EMPTY, true, true, true, true);
+        this(username, email, password, "", "", true, true, true, true);
     }
 
     public AppUser(String username, String email, String password, String firstName, String lastName) {
